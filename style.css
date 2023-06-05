@@ -1,0 +1,148 @@
+body{
+    background-color: rgb(151, 144, 136);
+}
+
+.checkbox{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0px;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+label{
+    display: block;
+    width: 45px;
+    height: 6px;
+    background-color: black;
+    border-radius: 5px;
+    margin: auto;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0px;
+    z-index: 1;
+}
+
+label::after{
+    content: '';
+    width: 45px;
+    height: 6px;
+    background-color: black;
+    border-radius: 5px;
+    position: absolute;
+    top: -12px;
+}
+
+label::before{
+    content: '';
+    width: 45px;
+    height: 6px;
+    background-color: black;
+    border-radius: 5px;
+    position: absolute;
+    top: 12px;
+}
+
+.cont:hover label,
+.cont:hover label::after,
+.cont:hover label::before{
+    background-color: blueviolet;
+    transition:0.5s;
+}
+
+.checkbox:checked + label::after,
+.checkbox:checked + label::before{
+    width: 45px;
+    transform-origin: 50% 50%;
+    top: 0%;
+   
+}
+.checkbox:checked + label::after{
+    transform: rotate(-45deg);
+}
+.checkbox:checked + label::before{
+    transform: rotate(45deg);
+}
+
+.checkbox:checked + label{
+    background: transparent;
+}
+
+/* for the effect and icons for rotation  */
+
+.items{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 40px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .8s ease;
+}
+
+.checkbox:checked ~ ul .items{
+    opacity: 1;
+    transition: all .8s ease;
+}
+
+.checkbox:checked ~ ul .items:nth-child(1){
+    transform: rotate(0) translate(-130px);
+}
+
+.checkbox:checked ~ ul .items:nth-child(2){
+    transform: rotate(60deg) translate(-130px);
+}
+
+.checkbox:checked ~ ul .items:nth-child(3){
+    transform: rotate(120deg) translate(-130px);
+}
+
+.checkbox:checked ~ ul .items:nth-child(4){
+    transform: rotate(180deg) translate(-130px);
+}
+
+.checkbox:checked ~ ul .items:nth-child(5){
+    transform: rotate(240deg) translate(-130px);
+}
+
+.checkbox:checked ~ ul .items:nth-child(6){
+    transform: rotate(300deg) translate(-130px);
+}
+
+.items:nth-child(2) i{
+    transform: rotate(300deg);
+}
+
+.items:nth-child(3) i{
+    transform: rotate(240deg);
+}
+
+.items:nth-child(4) i{
+    transform: rotate(180deg);
+}
+
+.items:nth-child(5) i{
+    transform: rotate(120deg);
+}
+
+.items:nth-child(6) i{
+    transform: rotate(60deg);
+}
+
